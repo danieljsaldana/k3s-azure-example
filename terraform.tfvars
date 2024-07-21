@@ -1,0 +1,12 @@
+resource_group_name = "rg-k3s"
+location            = "francecentral"
+vnet_name           = "k3s-vnet"
+vnet_address_space  = ["10.0.0.0/16"]
+subnet_name         = "k3s-subnet"
+subnet_address_prefix = ["10.0.1.0/24"]
+nsg_name            = "k3s"
+vm_name             = "k3s"
+vm_size             = "Standard_B2s"
+admin_username      = "k3s"
+ssh_public_key      = "ssh-rsa example"
+k3s_install_command = "curl -sfL https://get.k3s.io | sh - && sudo k3s kubectl get node"
